@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 public class EventHandler {
 
     private static DecimalFormat getDecimalFormat() {
-        return new DecimalFormat(ChatCalc.config.decimalFormat);
+        return new DecimalFormat(ChatCalc.decimalFormat);
     }
 
     public static boolean runExpression(TextFieldWidget field) {

@@ -5,7 +5,8 @@
   "name": "ChatCalc",
   "description": "A simple mod that turns your chat into a calculator.\nType an equation and hit tab to replace it with the solution.",
   "authors": [
-    "Kokeria"
+    "Kokeria",
+    "TomB_134"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/chatcalc"
@@ -16,21 +17,15 @@
   "entrypoints": {
     "client": [
       "me.kokeria.chatcalc.ChatCalc"
-    ],
-    "modmenu": [
-      "me.kokeria.chatcalc.Configuration"
     ]
   },
   "mixins": [
     "chatcalc.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.7.4",
-    "fabric": "*",
-    "minecraft": "1.15.x"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "fabricloader": ">=0.11.3",
+    "fabric": ">=0.35.0",
+    "java": ">=17"
   },
   "custom": {
     "modmenu:clientsideOnly": true
