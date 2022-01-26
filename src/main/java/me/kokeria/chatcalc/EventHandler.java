@@ -2,7 +2,7 @@ package me.kokeria.chatcalc;
 
 import me.kokeria.chatcalc.util.ChatHelper;
 import me.kokeria.chatcalc.util.MathEngine;
-import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.GuiTextField;
 
 import java.text.DecimalFormat;
 
@@ -12,16 +12,16 @@ public class EventHandler {
         return new DecimalFormat(ChatCalc.decimalFormat);
     }
 
-    public static boolean runExpression(TextFieldWidget field) {
+    public static boolean runExpression(GuiTextField field) {
 
         return runExprReplace(field) || runExprAdd(field);
 
     }
 
-    private static boolean runExprReplace(TextFieldWidget field) {
+    private static boolean runExprReplace(GuiTextField field) {
 
         String originalText = field.getText();
-        int cursor = field.getCursor();
+        int cursor = field.getCursorPosition();
 
         try {
             String word = ChatHelper.getWord(originalText, cursor);
@@ -37,10 +37,10 @@ public class EventHandler {
 
     }
 
-    private static boolean runExprAdd(TextFieldWidget field) {
+    private static boolean runExprAdd(GuiTextField field) {
 
         String originalText = field.getText();
-        int cursor = field.getCursor();
+        int cursor = field.getCursorPosition();
 
         try {
             String word = ChatHelper.getWord(originalText, cursor);

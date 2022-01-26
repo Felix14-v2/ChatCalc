@@ -1,6 +1,6 @@
 package me.kokeria.chatcalc.util;
 
-import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.GuiTextField;
 
 public class ChatHelper {
 
@@ -10,9 +10,9 @@ public class ChatHelper {
 
     }
 
-    public static boolean replaceWord(TextFieldWidget field, String replacement) {
+    public static boolean replaceWord(GuiTextField field, String replacement) {
         String input = field.getText();
-        int cursor = field.getCursor();
+        int cursor = field.getCursorPosition();
         int start = getStartOfWord(input, cursor);
         int end = getEndOfWord(input, cursor);
 
@@ -22,7 +22,7 @@ public class ChatHelper {
         return true;
     }
 
-    public static boolean addWordAfterIndex(TextFieldWidget field, int index, String word) {
+    public static boolean addWordAfterIndex(GuiTextField field, int index, String word) {
         String input = field.getText();
         String output = input.substring(0, index) + word + input.substring(index);
         if (output.length() > 256) return false;
